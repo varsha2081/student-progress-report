@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h1>Progress Report Portal for RNSIT</h1>
+
+<a href="Register">Admin Register</a><br>
+<a href="Login">Admin Login</a><br>
+<a href="results">Results</a>
+
+<form action="/results" method="POST">
+    <label for="usn">USN</label>
+    <input type="text" name="usn">
+    <button type="submit">Results</button>
+</form>
+
+<%- include('partials/footer') %>

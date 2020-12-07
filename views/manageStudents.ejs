@@ -1,0 +1,15 @@
+<h1>Manage Students</h1>
+
+<form action="/admin-dashboard/manageStudents" method="POST">
+        <label for="studentName">Student Name</label>
+        <input type="text" name="studentName">
+        <label for="usn">usn</label>
+        <input type="text" name="usn">
+        <button type="submit">add/edit</button>
+</form>
+
+<ol type="1">
+    <% for( let i = 0; i < stud.length; i++ ) { %>
+        <li><%= stud[i].name %> - <%= stud[i].usn %>  </li>
+    <% } %>
+</ol>

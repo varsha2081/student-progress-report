@@ -1,0 +1,14 @@
+<h1>Manage Subjects</h1>
+
+<ol type="1">
+    <% for( let i = 0; i < subs.length; i++ ) { %>
+        <li><%= subs[i].name %> - <%= subs[i].code %>  </li>
+    <% } %>
+</ol>
+<form action="/admin-dashboard/manageSubjects" method="POST">
+        <label for="subject">Subject</label>
+        <input type="text" name="name">
+        <label for="code">subject code</label>
+        <input type="text" name="code">
+        <button type="submit">add/edit</button>
+</form>
