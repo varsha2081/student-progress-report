@@ -1,3 +1,16 @@
 <h1>Results</h1>
 
-<h2>Name: {%=}</h2>
+<h2>Name: <%= stud.name %></h2>
+<h2>usn: <%= stud.usn %></h2>
+<ul>
+    <% stud.marks.forEach(function(submarks) {%>
+        <li>
+            <ul>
+                <li>subject: <%=submarks.subject%></li>
+                <li>marks: <%= submarks.marks %> </li>
+                <li>attendance: <%= submarks.attendance %> </li>
+                <li>updated by: <%= submarks.updatedBy %> </li>
+            </ul> 
+        </li>
+    <%});%>
+</ul>

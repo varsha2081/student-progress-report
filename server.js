@@ -238,8 +238,8 @@ app.post("/results",function(req,res){
       console.log(err);
       res.redirect("/");
     }else{
-      Subject.findOne({})
-      res.render("/results",{stud,stud});
+      console.log(stud);
+      res.render("results.ejs",{stud:stud});
     }
   })
 });
