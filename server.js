@@ -230,7 +230,6 @@ app.post("/admin-dashboard/manageMarks",checkAuthenticated,function(req,res){
 // app.get("/results",function(req,res){
 //   res.render("results.ejs",{stud:stud});
 // });
-
 app.post("/results",function(req,res){
   const usn = req.body.usn;
   Student.findOne({usn:usn},function(err,stud){
@@ -239,11 +238,22 @@ app.post("/results",function(req,res){
       res.redirect("/");
     }else{
       console.log(stud);
+      Object.keys(stud.marks).forEach(function(key, index){
+        Subject.findOne({'usn': key.subject}, function(err, result){
+          if (err){
+            console.log(err)
+            res.redirect("/")
+          }else{
+            console.log( stud.marks[index]["subject"])
+            stud.marks[index]["subject"] = result.name;
+            console.log( stud.marks[index]["subject"])
+          }
+        })
+      })
       res.render("results.ejs",{stud:stud});
     }
   })
 });
-
 
 
 
